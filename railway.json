@@ -6,7 +6,6 @@
   },
   "deploy": {
     "startCommand": "node packages/backend/dist/index.js",
-    "healthcheckPath": "/api/health",
-    "restartPolicyType": "ON_FAILURE"
+"restartPolicyType": "ON_FAILURE"
   }
 }

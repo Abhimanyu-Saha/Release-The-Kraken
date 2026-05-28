@@ -7,11 +7,11 @@ async function start() {
   await pool.query('SELECT 1')
   console.log('Database connected.')
 
-  await runMigrations(pool)
-
   app.listen(config.port, () => {
     console.log(`Server running on http://localhost:${config.port}`)
   })
+
+  await runMigrations(pool)
 }
 
 start().catch((err) => {
