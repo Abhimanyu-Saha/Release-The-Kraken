@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd packages/shared && npx tsc && cd ../builder && npm run build",
+  "outputDirectory": "packages/builder/dist",
+  "framework": "vite"
+}
