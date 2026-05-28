@@ -1,12 +1,13 @@
 import { app } from './app'
 import { config } from './config'
 import { pool } from './db/pool'
-
+import { runMigrations } from './db/migrate'
 
 async function start() {
-  // Verify DB connection
   await pool.query('SELECT 1')
   console.log('Database connected.')
+
+  await runMigrations(pool)
 
   app.listen(config.port, () => {
     console.log(`Server running on http://localhost:${config.port}`)

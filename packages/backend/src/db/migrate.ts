@@ -3,12 +3,9 @@ import fs from 'fs'
 import path from 'path'
 import { Pool } from 'pg'
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL })
-
-async function migrate() {
+export async function runMigrations(pool: Pool) {
   const client = await pool.connect()
   try {
-    // Create tracking table if it doesn't exist
     await client.query(`
       CREATE TABLE IF NOT EXISTS schema_migrations (
         filename TEXT PRIMARY KEY,
@@ -51,11 +48,16 @@ async function migrate() {
     console.log('Migrations complete.')
   } finally {
     client.release()
-    await pool.end()
   }
 }
 
-migrate().catch((err) => {
-  console.error('Migration failed:', err)
-  process.exit(1)
-})
+// Allow running as a standalone script: ts-node src/db/migrate.ts
+if (require.main === module) {
+  const pool = new Pool({ connectionString: process.env.DATABASE_URL })
+  runMigrations(pool)
+    .then(() => pool.end())
+    .catch((err) => {
+      console.error('Migration failed:', err)
+      process.exit(1)
+    })
+}
