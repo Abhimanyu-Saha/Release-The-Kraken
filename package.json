@@ -1,0 +1,20 @@
+{
+  "name": "release-hub",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/backend",
+    "packages/builder",
+    "packages/renderer"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "dev:builder": "npm run dev --workspace=packages/builder",
+    "dev:renderer": "npm run dev --workspace=packages/renderer",
+    "build:backend": "npm run build --workspace=packages/backend",
+    "build:builder": "npm run build --workspace=packages/builder",
+    "build:renderer": "npm run build --workspace=packages/renderer",
+    "migrate": "npm run migrate --workspace=packages/backend"
+  }
+}

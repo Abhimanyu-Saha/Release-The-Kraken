@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.tsbuildinfo
+
+# Keep uploads dir but ignore its contents
+packages/backend/src/uploads/*
+!packages/backend/src/uploads/.gitkeep

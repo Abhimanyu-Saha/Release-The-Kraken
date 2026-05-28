@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-22T00:00:00Z",
+  "title": "Design System: Release Hub",
+  "extensions": {
+    "colorMeta": {
+      "violet-accent": {
+        "role": "primary",
+        "displayName": "Tower Violet",
+        "canonical": "oklch(62% 0.27 295)",
+        "tonalRamp": ["#1a0033", "#2d0052", "#4f0082", "#7200c8", "#9019f0", "#aa3bff", "#c084fc", "#e8ccff"]
+      },
+      "violet-accent-dark": {
+        "role": "primary-dark",
+        "displayName": "Tower Violet (Dark Mode)",
+        "canonical": "oklch(72% 0.20 295)",
+        "tonalRamp": ["#1a0033", "#2d0052", "#4f0082", "#7200c8", "#9019f0", "#aa3bff", "#c084fc", "#e8ccff"]
+      },
+      "violet-accent-bg": {
+        "role": "primary-tint",
+        "displayName": "Violet Tint",
+        "canonical": "oklch(95% 0.04 295)",
+        "tonalRamp": ["#1a0033", "#2d0052", "#4f0082", "#7200c8", "#9019f0", "#aa3bff", "#c084fc", "#e8ccff"]
+      },
+      "violet-active-nav-bg": {
+        "role": "primary-subtle",
+        "displayName": "Active Nav Tint",
+        "canonical": "oklch(93% 0.06 295)",
+        "tonalRamp": ["#1a0033", "#2d0052", "#4f0082", "#7200c8", "#9019f0", "#aa3bff", "#c084fc", "#e8ccff"]
+      },
+      "page-bg": {
+        "role": "neutral-bg",
+        "displayName": "Page Ground",
+        "canonical": "oklch(98% 0.003 265)",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f9fafb"]
+      },
+      "surface": {
+        "role": "neutral-surface",
+        "displayName": "Surface White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f9fafb"]
+      },
+      "border": {
+        "role": "neutral-border",
+        "displayName": "Divider",
+        "canonical": "oklch(92% 0.003 265)",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f9fafb"]
+      },
+      "text-primary": {
+        "role": "neutral-text-strong",
+        "displayName": "Heading Text",
+        "canonical": "oklch(20% 0.005 265)",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f9fafb"]
+      },
+      "text-muted": {
+        "role": "neutral-text-weak",
+        "displayName": "Quiet Text",
+        "canonical": "oklch(52% 0.008 265)",
+        "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f9fafb"]
+      },
+      "status-published-bg": {
+        "role": "semantic-success-bg",
+        "displayName": "Published Ground",
+        "canonical": "oklch(94% 0.06 155)",
+        "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#86efac", "#dcfce7"]
+      },
+      "status-pending-bg": {
+        "role": "semantic-warning-bg",
+        "displayName": "Pending Ground",
+        "canonical": "oklch(96% 0.06 85)",
+        "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fcd34d", "#fef3c7"]
+      },
+      "status-approved-bg": {
+        "role": "semantic-info-bg",
+        "displayName": "Approved Ground",
+        "canonical": "oklch(94% 0.04 260)",
+        "tonalRamp": ["#1e1b4b", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Release headings in the renderer only. Never in the builder." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings in renderer templates (h2)." },
+      "title": { "displayName": "Title", "purpose": "Page title in topbar; editor panel section labels." },
+      "body": { "displayName": "Body (Builder)", "purpose": "All body copy in the builder. Compact for production-board density." },
+      "body-renderer": { "displayName": "Body (Renderer)", "purpose": "Body copy in announcement templates only. Relaxed for reading comfort." },
+      "label": { "displayName": "Label", "purpose": "Table column headers and field section labels. All-caps at 11px only." }
+    },
+    "shadows": [
+      {
+        "name": "ambient-hover",
+        "value": "rgba(0,0,0,0.1) 0 10px 15px -3px, rgba(0,0,0,0.05) 0 4px 6px -2px",
+        "purpose": "Renderer interactive elements at hover only. Lifts to confirm interactivity, disappears on mouse-out. Never used in the builder."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "150ms ease-out",
+        "purpose": "Default for all state transitions: color, background, shadow. Short and responsive; no choreography."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "1024px", "purpose": "Builder sidebar and typography scale breakpoint." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one violet surface in the builder. Used for the single primary action per screen.",
+      "html": "<button class=\"ds-btn-primary\"><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 4v16m8-8H4\"/></svg>New Release</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: #aa3bff; color: #ffffff; font-size: 14px; font-weight: 500; line-height: 1.5; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; border: none; border-radius: 8px; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-primary:hover { background: #8b22e0; } .ds-btn-primary:focus-visible { outline: 2px solid #aa3bff; outline-offset: 2px; } .ds-btn-primary:active { background: #7219c2; } .ds-btn-icon { width: 16px; height: 16px; flex-shrink: 0; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary inline action. No background, quiet text. Used for add-bullet, text-link triggers.",
+      "html": "<button class=\"ds-btn-ghost\">Add point</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 4px; padding: 8px 12px; background: transparent; color: #6b7280; font-size: 12px; font-weight: 500; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; border: none; border-radius: 6px; cursor: pointer; transition: color 150ms ease-out, background 150ms ease-out; } .ds-btn-ghost:hover { color: #111827; background: #f3f4f6; } .ds-btn-ghost:focus-visible { outline: 2px solid #aa3bff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Standard form input. Border at rest, violet ring on focus. No border + ring double-treatment.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"e.g. Q2 AI Workflow Update\" />",
+      "css": ".ds-input { width: 100%; padding: 8px 12px; background: #ffffff; color: #111827; font-size: 14px; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; line-height: 1.5; border: 1px solid #d1d5db; border-radius: 8px; outline: none; transition: border-color 150ms, box-shadow 150ms; box-sizing: border-box; } .ds-input::placeholder { color: #9ca3af; } .ds-input:focus { border-color: transparent; box-shadow: 0 0 0 2px #aa3bff; }"
+    },
+    {
+      "name": "Status Badge — Published",
+      "kind": "chip",
+      "refersTo": "status-badge",
+      "description": "Release lifecycle state badge. Pill shape, tinted semantic background, dot + label.",
+      "html": "<span class=\"ds-badge ds-badge--published\"><span class=\"ds-badge-dot\"></span>Published</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; white-space: nowrap; } .ds-badge-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; } .ds-badge--published { background: #dcfce7; color: #15803d; } .ds-badge--published .ds-badge-dot { background: #22c55e; } .ds-badge--pending { background: #fef3c7; color: #b45309; } .ds-badge--pending .ds-badge-dot { background: #f59e0b; } .ds-badge--approved { background: #dbeafe; color: #1d4ed8; } .ds-badge--approved .ds-badge-dot { background: #3b82f6; } .ds-badge--draft { background: #f3f4f6; color: #4b5563; } .ds-badge--draft .ds-badge-dot { background: #9ca3af; } .ds-badge--archived { background: #f3f4f6; color: #6b7280; } .ds-badge--archived .ds-badge-dot { background: #d1d5db; }"
+    },
+    {
+      "name": "Nav Item (Active)",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Sidebar navigation link. Violet tint background + violet-700 text in active state.",
+      "html": "<nav class=\"ds-sidebar-nav\"><a class=\"ds-nav-item ds-nav-item--active\" href=\"#\"><svg class=\"ds-nav-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\"/></svg>All Releases</a></nav>",
+      "css": ".ds-sidebar-nav { display: flex; flex-direction: column; gap: 2px; padding: 16px 12px; } .ds-nav-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 500; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; color: #4b5563; text-decoration: none; transition: background 150ms ease-out, color 150ms ease-out; } .ds-nav-item:hover { background: #f3f4f6; color: #111827; } .ds-nav-item--active { background: #ede9fe; color: #6d28d9; } .ds-nav-icon { width: 16px; height: 16px; flex-shrink: 0; }"
+    },
+    {
+      "name": "Card / Panel",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Primary container in the builder. White surface on gray-50 ground; 12px radius; 1px border.",
+      "html": "<div class=\"ds-card\"><p class=\"ds-card-body\">Panel content goes here.</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; overflow: hidden; } .ds-card-body { margin: 0; font-size: 14px; color: #374151; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; line-height: 1.5; }"
+    },
+    {
+      "name": "CTA Button (Renderer)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one violet element in a published release announcement. Same accent as the builder's primary button.",
+      "html": "<a class=\"ds-cta-btn\" href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\">Try it now</a>",
+      "css": ".ds-cta-btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 24px; background: #aa3bff; color: #ffffff; font-size: 14px; font-weight: 600; font-family: system-ui, 'Segoe UI', Roboto, sans-serif; text-decoration: none; border-radius: 8px; transition: background 150ms ease-out; } .ds-cta-btn:hover { background: #8b22e0; } .ds-cta-btn:focus-visible { outline: 2px solid #aa3bff; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Tower",
+    "overview": "Release Hub is a tool that disappears. PMs open it, do their work, and close it. The interface should never compete for attention with the releases being published — it exists to move content through a workflow, not to be noticed. Surfaces are quiet: off-white backgrounds, gray infrastructure, no decorative flourishes. The only color on screen is color that means something.\n\nThe violet accent (#aa3bff) is the one voice that speaks. It appears on action buttons, focus rings, and active nav states — the exact points where a PM is committing to something. The status system extends this logic: amber for pending, blue for approved, green for published. These colors are signals, not decoration. When a PM scans the release table and sees green, they know a release is live. That recognition is the interface doing its job.\n\nThe renderer inherits this same system. The violet CTA button in a published release is the same violet as the builder's primary action button. PMs author and their audiences receive in one visual language.",
+    "keyCharacteristics": [
+      "Flat, tonal surfaces: depth through gray-50 vs white, not shadow or blur",
+      "Violet reserved for decision points and the active state of things in flight",
+      "Status colors are load-bearing: semantic, never decorative",
+      "System-ui typography: no personality of its own, maximum legibility",
+      "Compact information density; the builder is a production board, not a dashboard"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Violet appears on at most 10% of any given screen. One primary button. One active nav item. One focus ring at a time. Two violet elements competing on the same screen is prohibited.", "section": "colors" },
+      { "name": "The Status Purity Rule", "body": "Amber, blue, and green appear exclusively inside status badges. If you need a callout or highlight block, use a gray-50 tint. Status colors are reserved for workflow state.", "section": "colors" },
+      { "name": "The Retirement Rule", "body": "indigo-600 (#4f46e5) and every Tailwind indigo-* value is retired. Violet (#aa3bff) is the canonical accent.", "section": "colors" },
+      { "name": "The Renderer Exception", "body": "Body text in the renderer runs at 18px, not 14px. The builder is a production environment; the renderer is a communication surface.", "section": "typography" },
+      { "name": "The Uppercase Ceiling", "body": "All-caps text is permitted only at 11px label weight. Never on body copy, never on headings, never on button labels.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No surface has a shadow at rest. Shadows are hover-state feedback only, and only in the renderer. If you are reaching for a box-shadow to add depth to a static card in the builder, use a tonal background shift instead.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use violet exclusively as the primary action color: one button, one active nav item, one focus ring per screen.",
+      "Do use the tonal shift (gray-50 ground / white surface) as the primary depth signal at rest.",
+      "Do use status colors only inside status badges tied to release lifecycle states.",
+      "Do use rounded-xl (12px) for panels and cards; rounded-lg (8px) for inputs and buttons; rounded-full for badges.",
+      "Do write table column headers and editor section labels in 11px semibold uppercase only.",
+      "Do keep the topbar to a title only. It names the view; it does not act.",
+      "Do use the renderer's body size (18px) for any surface that is read, not operated."
+    ],
+    "donts": [
+      "Don't use indigo-600 (#4f46e5) or any Tailwind indigo value as a primary action color. It is retired.",
+      "Don't add shadows to builder cards, panels, or surfaces at rest.",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe on any component.",
+      "Don't add a second violet element to a screen to reinforce hierarchy. Competing violet elements collapse the signal.",
+      "Don't use status semantic colors (amber, blue, green) outside of status badges.",
+      "Don't add glassmorphism, blurred backdrops, or gradient fills.",
+      "Don't build a hero-metric panel (big number, supporting stats, gradient accent).",
+      "Don't use uppercase text above 11px outside the sidebar wordmark."
+    ]
+  }
+}
