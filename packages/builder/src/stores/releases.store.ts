@@ -13,7 +13,7 @@ export const useReleasesStore = defineStore('releases', () => {
     loading.value = true
     try {
       const { data } = await client.get<{ releases: ReleaseWithContent[] }>('/releases')
-      list.value = data.releases
+      list.value = data.releases ?? []
     } finally {
       loading.value = false
     }
